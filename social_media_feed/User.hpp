@@ -10,15 +10,20 @@ class User {
 private:
     std::string name;
     std::string userId;
+    std :: string bio;
     std::vector<Post*> posts;
     std::vector<User*> followers;
 
 public:
-    User(std::string name, std::string userId);
+    User();
+    User(std::string name, std::string userId , std ::string bio);
+    std::string getName() const;
+    void setName(const std::string &name);
     void addPost(Post* post);
     void follow(User* other);
     std::vector<Post*> getFeed();
-    void displayUserInfo();
+    void displayUserInfo() const;
+    void setBio(const std::string &bio);
 };
 
 #endif

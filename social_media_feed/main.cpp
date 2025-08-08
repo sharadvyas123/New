@@ -1,11 +1,19 @@
 #include "User.hpp"
+#include "Post.hpp"
 #include <iostream>
+#include <string>
+
 
 int main()
 {
-    std::string name = "Sharad";
-    std::string userId = "1";
-    User u(name, userId);
-    std :: cout <<"done"<< std::endl;
+    std :: string name = "Sharad";
+    std :: string Id = "1";
+    std :: string bio = "Building cool stuff in C++";
+    User u1(name ,Id , bio);
+    u1.displayUserInfo();
+    std::string content ="Hello World!";
+    time_t timestamp = time(nullptr);
+    Post p1(content , name ,Id, timestamp);
+    p1.displayPost();
     return 0;
 }
